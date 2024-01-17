@@ -6,6 +6,63 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+:root{
+    --hd-bg:#f8f3ff;
+    --links-color:#9089cc;
+    --botom-bg:#674baf;
+    --light-pink:#e882e8;
+    --img-bg:#eadbff;
+    }
 body{
+background-color: #9089cc;
+}
+.header{
+    background-color: var(--hd-bg);
+    display: flex;
+    justify-content: space-between;/*Distribuir contenido de la nav (solo d:flex)*/
+    align-items:center;
+    height: 85px;
+    padding: 5px 10%;
+}
+.header .logo img:hover{
+    transform: scale(1.2);/*logo se crece al poner cursor*/
+}
+.header .logo img{
+    transition: all 0.3s;/*Cambio se vea mejor*/
+}
+.header .logo {
+    cursor: pointer;/*Mouse manita*/
+}
+.header .nav-links{
+    list-style: none;/*Quita puntos de li*/
+    margin: auto 0;/*quitar?*/
+}
+.header .nav-links li{
+    display: inline-block;/*alinea los li*/
+    padding: 0 20px;
+}
+.header .nav-links a{
+    text-decoration: none;
+    font-size: 700;
+    color: var(--links-color);
 
+}
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
+.header .btn-container .btn button{
+    font-weight: 700;
+    padding: 9px 25px;
+    margin: 5px;
+    color: white;
+    background: #9089cc;
+    border-radius: 50px ;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.header .btn-container .btn button:hover{
+    background-color: #9089cc;
+    color: white;
+    transform: scale(1.1);
 }
