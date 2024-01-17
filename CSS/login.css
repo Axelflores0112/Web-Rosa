@@ -23,7 +23,6 @@ a{
     justify-content: space-between;/*Hacer que contenedor e imagne se alien*/
     overflow:hidden;
     border-radius: 10px;
-    border: 2px solid red;
 }
 .login-info-container{
     width: 50%;
@@ -33,7 +32,6 @@ a{
     text-align: center;/*alinear contenido*/
     padding-top:6rem ;/*0.5 anterior*/
     background-color: var(--lg-bg);
-    border: 2px solid red;
 }
 .image{
     width: 50%;
