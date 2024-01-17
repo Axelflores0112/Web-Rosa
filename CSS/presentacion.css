@@ -19,10 +19,13 @@ background-color: #9089cc;
 .header{
     background-color: var(--hd-bg);
     display: flex;
-    justify-content: space-between;/*Distribuir contenido de la nav (solo d:flex)*/
+    justify-content: flex-end;/*Distribuir contenido de la nav (solo d:flex)*/
     align-items:center;
     height: 85px;
     padding: 5px 10%;
+}
+.header .logo{
+    margin-right: auto;/*Enviar logo a la derecha*/
 }
 .header .logo img:hover{
     transform: scale(1.2);/*logo se crece al poner cursor*/
@@ -42,7 +45,7 @@ background-color: #9089cc;
     padding: 0 20px;
 }
 .header .nav-links a{
-    text-decoration: none;
+    
     font-size: 700;
     color: var(--links-color);
 
@@ -50,7 +53,8 @@ background-color: #9089cc;
 .header .nav-links li:hover{
     transform: scale(1.1);
 }
-.header .btn-container .btn button{
+.header .btn-container .btn button,
+.header .menu button{
     font-weight: 700;
     padding: 9px 25px;
     margin: 5px;
@@ -61,8 +65,71 @@ background-color: #9089cc;
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
-.header .btn-container .btn button:hover{
+.header .btn-container .btn button:hover,
+.header .menu button:hover{
     background-color: #9089cc;
     color: white;
     transform: scale(1.1);
+}
+
+@media screen and (max-height:800px) {
+    .nav-links, .btn{
+        display: none;
+    }
+    .menu{
+        display: inherit;
+    }
+}
+.menu{
+    display: none;
+}
+/*Nav-reposonsive*/
+.header a{
+    text-decoration: none;
+}
+.header .overlay{
+    height: 100%;/*de aqui*/
+    width: 0;
+    position: fixed;/*a aqui ya se escondio todo en el boton*/
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #9089cc;
+    overflow: hidden;
+    transition:all 0.3s ease 0s ;
+}
+.header .overlay .overlay-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header .overlay a{
+    padding: 15px;
+    font-size: 36px;
+    display:block;/*contenido en vertical*/
+    transition:all 0.3s ease 0s;
+    font-weight: 700;
+    color: white;
+}
+.header .overlay a:hover,
+.header .overlay a:focus{
+    color: var(--botom-bg);
+}
+.header .overlay .close{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+}
+@media screen and (max-height:450px) {
+     .header .overlay a{
+        font-size: 20px;
+     }
+     .header .overlay .close{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+     }
 }
