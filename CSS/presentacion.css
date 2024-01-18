@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,400&display=swap');
-
+/*Nav-reposonsive*/
 *{
     box-sizing: border-box;
     margin: 0;
@@ -53,6 +53,9 @@ background-color: #9089cc;
 .header .nav-links li:hover{
     transform: scale(1.1);
 }
+.menu{
+    display: none;
+}
 .header .btn-container .btn button,
 .header .menu button{
     font-weight: 700;
@@ -72,7 +75,7 @@ background-color: #9089cc;
     transform: scale(1.1);
 }
 
-@media screen and (max-height:800px) {
+@media screen and (max-width:900px) {
     .nav-links, .btn{
         display: none;
     }
@@ -80,10 +83,7 @@ background-color: #9089cc;
         display: inherit;
     }
 }
-.menu{
-    display: none;
-}
-/*Nav-reposonsive*/
+
 .header a{
     text-decoration: none;
 }
@@ -132,4 +132,11 @@ background-color: #9089cc;
         top: 15px;
         right: 35px;
      }
+}
+/*main-content*/
+.main-container{
+    border: 2px solid red;
+}
+.mision-container{
+    border: 2px solid red;
 }
