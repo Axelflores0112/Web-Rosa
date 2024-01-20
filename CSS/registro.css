@@ -79,3 +79,23 @@ a{
     color: var(--titulo-bg);
     letter-spacing: 1px;
 }
+/*Hacer responsive*/
+@media screen and (max-width:1000px){
+    .register-container{
+        width: 70%;
+        margin-top: 5rem;
+    }
+    .register-info-container{
+        width: 100%;
+    }
+}
+@media screen and (max-width:650px){
+    .register-container{
+        width: 90%;
+    }
+}
+@media screen and (max-width:500px){
+    .inputs-container{
+        flex-direction: column;
+    }
+}

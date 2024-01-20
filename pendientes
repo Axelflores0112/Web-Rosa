@@ -1,0 +1,22 @@
+Notas:
+1.Quitar productos de nav de la pagina principal-solo ingresar a productos cuando se inicie sesion
+2.nav de usuario debe tener:
+-Acceso a carrito (icono o texto(?))
+-Cerrar sesion
+-Contacto
+Se elimina todo lo demas.
+3.Vista de administrador
+Funciones-vista
+Nav de admin debe tener:
+-Ver usuarios (tabla)
+-Agregar producto
+-Cerrar sesion
+4.Vista de agregar producto (admin)
+5.Vista de carrito o resumend e compra(usuario)
+6.Productos van a estar en cards no carrusel(Facilitar agregar producto al admin) 
+
+Ayudas:
+https://www.youtube.com/watch?v=3vYsl8GzEms&pp=ygUTY2FyZCByZXNwb25zaXZlIGNzcw%3D%3D Carrito
+https://youtu.be/nJ8QuMsGtpY cards
+https://youtu.be/RdGlmKVwuWU about us (para mision y esas madres)
+admin dashboard <- buscar de esta forma para mas opciones
