@@ -18,6 +18,7 @@ body{
     display: flex;/*footer siempre abajo*/
     flex-direction: column;/*footer siempre abajo*/
     min-height: 100vh;/*footer siempre abajo*/
+    border: 2px solid red;
 }
 .header{
     background-color: var(--hd-bg);
@@ -138,16 +139,53 @@ body{
 }
 /*main-content*/
 .main-container{
-    padding-top: 5%;
-    margin: auto;/*ceentra contenido*/
-    display: grid;/*de aqui*/
-    grid-template-columns: repeat(3,1fr);/*a aqui es para hecr columnas con d:grid*/
+    border: 2px solid blue;
+    margin: 0px;
+    padding-top: 0px;
+    box-sizing: border-box;
+    width: 100%;/*body-video*/
+    min-height: 100vh;
+}
+.mision-title h1{
+    font-size: 46px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px 0px;
 }
 .mision-container{
+    width: 95%;
     margin: 2em ;
-    background-color: white;
-    padding: 1em;
+    padding: 10px;
     border-radius: 1em;
+}
+.mision{
+    width: 100%;   
+    display: flex;/*Texto aun lado de la imagen*/
+    justify-content: center;/*de aqui*/
+    align-items: center;/*a aqui es para centrar texto en medio de la img*/
+    margin-top: 3px;/*distancia al titulo*/
+    padding: 0px 80px;
+}
+.img-mision-section{
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+.img-mision-section img{
+    height: 280px;
+    width: 280px;
+    border-radius: 30%;
+    display: block;
+    margin: auto;
+    background-color: white;
+}
+article{
+    background-color: white;
+    padding: 8px 8px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-left: 10px;
 }
 .vision-container{
     margin: 2em ;
@@ -161,13 +199,28 @@ body{
     padding: 1em;
     border-radius: 1em;
 }
-@media screen and (max-width:800px){
+/*main-content responsive*/
+@media screen and (max-width:900px){
     .main-container{
-        width: 90%;
-        grid-template-columns: repeat(1,1fr);/*a aqui es para hecr columnas con d:grid*/
-        grid-gap: 30px;/*Funcion obsoleta*/
-        padding: 35px 0px;
-    
+        margin-top: 15px;
+    }
+    .mision-title h1{
+        font-size: 28px;
+        text-align: center;
+    }
+    .img-mision-section img{
+        height: 200px;
+        width: 200px;
+    }
+    .mision{
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    article{
+        margin-top: 30px;
+    }
+    article h3{
+        font-size: 18px;
     }
 }
 /*Footer*/
