@@ -151,7 +151,7 @@ main{
 }
 main h3{
     text-align: center;
-    font-size: 25px;
+    font-size: 15px;
     margin: 0;
     padding-top: 10px;
 }
@@ -188,6 +188,7 @@ main img{
     text-align:center ;/*centrar img*/
     margin: 0 auto;/*centrar img*/
     display: block;
+    object-fit: cover;
 }
 p{
     text-align: center;
@@ -221,10 +222,14 @@ main button{
     .content{
         width: 45%;
     }
+   
 }
 @media screen and (max-width:750px) {
     .content{
         width: 100%;
+    }
+    .main h3{
+        font-size: 15px;
     }
 }/*Fin de main-content*/
 

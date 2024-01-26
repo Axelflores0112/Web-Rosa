@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,400&display=swap');
+:root{
+    --lg-bg:#f8f3ff;
+    --titulo-bg:#9089cc;
+    --botom-bg:#674baf;
+    --light-pink:#e882e8;
+    --img-bg:#eadbff;
+    }
+/*Nav-reposonsive*/
+*{
+    box-sizing: border-box;/*ayuda al responsive*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --hd-bg:#f8f3ff;
+    --links-color:#9089cc;
+    --botom-bg:#674baf;
+    --light-pink:#e882e8;
+    --img-bg:#eadbff;
+    }
+body{
+    background-color: #9089cc;
+    display: flex;/*footer siempre abajo*/
+    flex-direction: column;/*footer siempre abajo*/
+    min-height: 100vh;/*footer siempre abajo*/
+
+}
+.header{
+    background-color: var(--hd-bg);
+    display: flex;
+    justify-content: flex-end;/*Distribuir contenido de la nav (solo d:flex)*/
+    align-items:center;
+    height: 85px;
+    padding: 5px 10%;
+}
+.header .logo{
+    margin-right: auto;/*Enviar logo a la derecha*/
+}
+.header .logo img:hover{
+    transform: scale(1.2);/*logo se crece al poner cursor*/
+}
+.header .logo img{
+    transition: all 0.3s;/*Cambio se vea mejor*/
+}
+.header .logo {
+    cursor: pointer;/*Mouse manita*/
+}
+.header .nav-links{
+    list-style: none;/*Quita puntos de li*/
+    margin: auto 0;/*quitar?*/
+}
+.header .nav-links li{
+    display: inline-block;/*alinea los li*/
+    padding: 0 20px;
+}
+.header .nav-links a{
+    
+    font-size: 700;
+    color: var(--links-color);
+
+}
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
+.menu{
+    display: none;
+}
+.header .btn-container .btn button,
+.header .menu button{
+    font-weight: 700;
+    padding: 9px 25px;
+    margin: 5px;
+    color: white;
+    background: #9089cc;
+    border-radius: 50px ;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.header .btn-container .btn button:hover,
+.header .menu button:hover{
+    background-color: #9089cc;
+    color: white;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:900px) {
+    .nav-links, .btn{
+        display: none;
+    }
+    .menu{
+        display: inherit;
+    }
+}
+
+.header a{
+    text-decoration: none;
+}
+.header .overlay{
+    height: 100%;/*de aqui*/
+    width: 0;
+    position: fixed;/*a aqui ya se escondio todo en el boton*/
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #9089cc;
+    overflow: hidden;
+    transition:all 0.3s ease 0s ;
+}
+.header .overlay .overlay-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header .overlay a{
+    padding: 15px;
+    font-size: 36px;
+    display:block;/*contenido en vertical*/
+    transition:all 0.3s ease 0s;
+    font-weight: 700;
+    color: white;
+}
+.header .overlay a:hover,
+.header .overlay a:focus{
+    color: var(--botom-bg);
+}
+.header .overlay .close{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+}
+@media screen and (max-height:450px) {
+     .header .overlay a{
+        font-size: 20px;
+     }
+     .header .overlay .close{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+     }
+}/*fin de nav*/
+
+/*mani content*/
+
+/*Footer*/
+.footer{
+    width: 100;
+    background-color: #645F8E;
+    color: white;
+    margin-top: auto;/*footer siempre abajo*/
+}
+.footer .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;/*ceentra contenido*/
+    display: grid;/*de aqui*/
+    grid-template-columns: repeat(3,1fr);/*a aqui es para hecr columnas con d:grid*/
+    grid-gap: 50px;/*Funcion obsoleta*/
+    padding: 45px 0px;
+
+}
+.footer .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;/*centrar horizontalemente*/
+    align-items: center;/*centra verticalmente*/
+}
+.footer .grupo-1 .box #titulo-footer{
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.footer .grupo-1 .box p{
+    margin-bottom: 10px;
+}
+.footer .grupo-1 .social a{
+    display: inline-block;/*borra linea de icono*/
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    text-align: center;
+    transition: all 3ms ease;
+}
+.footer .grupo-1 .social a:hover{
+    background-color: #9089cc;
+}
+.footer .grupo-2{
+    padding: 15px 10px;
+    text-align: center;
+    background-color: 	#645F8E;
+}
+@media screen and (max-width:800px){
+    .footer .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1,1fr);/*a aqui es para hecr columnas con d:grid*/
+        grid-gap: 30px;/*Funcion obsoleta*/
+        padding: 35px 0px;
+    
+    }
+}/*fin de footer*/

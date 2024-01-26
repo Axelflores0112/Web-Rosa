@@ -1,22 +1,63 @@
-Notas:
-1.Quitar productos de nav de la pagina principal-solo ingresar a productos cuando se inicie sesion
-2.nav de usuario debe tener:
+Notas:Frontend
+1.Quitar productos de nav de la pagina principal-solo ingresar a productos cuando se inicie sesion X
+2.nav de usuario debe tener: X
 -Acceso a carrito (icono o texto(?))
 -Cerrar sesion
--Contacto
 Se elimina todo lo demas.
-3.Vista de administrador
+3.Vista de administrador X
 Funciones-vista
 Nav de admin debe tener:
 -Ver usuarios (tabla)
 -Agregar producto
 -Cerrar sesion
-4.Vista de agregar producto (admin)
+4.Vista de agregar producto (admin)X
 5.Vista de carrito o resumend e compra(usuario)
-6.Productos van a estar en cards no carrusel(Facilitar agregar producto al admin) 
-
+6.Productos van a estar en cards no carrusel(Facilitar agregar producto al admin)X 
+7.Validaciones
+Ver si i programa (proyecto L) sirve, si si darle una revisada al codigo.
 Ayudas:
 https://www.youtube.com/watch?v=3vYsl8GzEms&pp=ygUTY2FyZCByZXNwb25zaXZlIGNzcw%3D%3D Carrito
 https://youtu.be/nJ8QuMsGtpY cards
 https://youtu.be/RdGlmKVwuWU about us (para mision y esas madres)
 admin dashboard <- buscar de esta forma para mas opciones
+https://youtu.be/kRs3aTi3pzU mi cards
+
+---------------------------------------------------------------------------------
+Backend
+1.Base de datos: 
+-Productos
+--Precio,imagen,descripcion,nombre,idproducto
+-Usuarios
+--Nombre,contraseña,correo
+2.Panel de administrador
+-Productos
+--Agregar,Quitar,Editar
+-Usuarios
+--Quitaz,Editar
+Nota:Las tablas de usuarios y productos se van ver al mismo tiempo. 
+Nota:Agregar producto a Base de datos,tabla-admin,vista-usuario.
+3.Carrito
+4.Correo con orden completa
+5.Sesiones (PHP)
+Ayudas:
+https://www.youtube.com/watch?v=lduIpYA66mM carrito
+https://www.youtube.com/watch?v=gXWohFYrI0M&pp=ygUiY2FyZHMgcmVzcG9uc2l2ZSBodG1sIGNzcyBjb21tZXJjZQ%3D%3D agregar a carro
+https://www.youtube.com/watch?v=AWjCxj9D_Ko&pp=ygUabG9naW4geSByZWdpc3RybyB3b3JrYmVuY2g%3D Roles de usaurio
+https://www.youtube.com/watch?v=fCTd8ilXZGI dashboard
+https://www.youtube.com/watch?v=37IN_PW5U8E registro basico
+
+A TENER EN CUENTA:
+<a href="#" id="cerrarSesionLink">
+  <button id="cerrarSesionButton">Cerrar Sesión</button>
+</a>
+
+<script>
+  document.getElementById("cerrarSesionLink").addEventListener("click", function(event) {
+    // Evitar el comportamiento predeterminado del enlace
+    event.preventDefault();
+    
+    // Agregar aquí la lógica para cerrar sesión
+    console.log("Cerrar sesión...");
+  });
+</script>
+Codigo por si hay problemas de tener anidado boton y a

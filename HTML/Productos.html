@@ -19,11 +19,11 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#"><i class="fa-solid fa-cart-shopping" style="padding-right: 5px;"></i>Carrito</a></li>
+                <li><a href="../HTML/Carrito.html"><i class="fa-solid fa-cart-shopping" style="padding-right: 5px;"></i>Carrito</a></li>
             </ul>
         </nav>
         <div class="btn-container">
-            <a href="../HTML/Login.html" class="btn"><button>Cerrar sesión</button></a>
+            <a class="btn"><button>Cerrar sesión</button></a>
         </div>
         <a onclick="openNav()" href="#" class="menu"><button>Menu</button></a>
 
@@ -31,7 +31,9 @@
             <a onclick="closeNav()" href="#" class="close">&times;<!--Icono de la X (?)--></a>
             <div class="overlay-content">
                 <a href="#"><i class="fa-solid fa-cart-shopping" style="padding-right: 5px;"></i>Carrito</a>
-                <a href="../HTML/Login.html">Cerrar sesion</a>
+                <div class="btn-container">
+                    <a class="btn"><button style="font-size: 0.8em;" type="submit">Cerrar sesión</button></a>
+                </div>
             </div>
         </div>
     </header>
