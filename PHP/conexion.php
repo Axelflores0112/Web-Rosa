@@ -5,17 +5,17 @@
         private $pass ="";
         private $db="web_rosa";
         protected $conexion;
+        private static $instancia;//Variable para generar instancia unica aplicando singletone
     
-        public function __construct(){
-            $this->conexion();
+        private function __construct(){
+            $this->conexion=new mysqli($this->host,$this->user,$this->pass,$this->db);
         }//Con esto cada vez que se crea un objeto de la clase se establece una conexion a la base de datos.
 
-        public function conexion(){ //Metodo para establecer conexion base de datos
-            try{
-                $this->conexion=new mysqli($this->host,$this->user,$this->pass,$this->db);
-            }catch(Exception $error){//Si hay un problema, se mostrara error y obtendra que tipo de errror es
-                die($error->getMessage());
+        public static function getInstance(){ //Metodo para establecer conexion base de datos con singletone
+            if(self::$instancia===null){
+                self::$instancia= new self();
             }
+            return self::$instancia;
         }
 
         public function close(){//metdodo para cerrar la conexion a la base de datos
@@ -32,7 +32,7 @@
                 }
                 if(!empty($parametros)){
                     $tipos=array_shift($parametros);//Elimina el primer elemnto del array (en este caso 'sss' (que mamada))
-                    $statement->bind_param($tipos,...$parametros);//Pasamos tipo de datos que entraran a la base de datos y sepramos lo almacenado enn parametros
+                    $statement->bind_param($tipos,...$parametros);//Pasamos tipo de datos que entraran a la base de datos y separamos lo almacenado en parametros
                 }
                 $resultado=$statement->execute();//Ejecutamos la consulta
                 if(!$resultado){
@@ -44,6 +44,27 @@
                 die($error->getMessage());// Manejar cualquier excepción y detener la ejecución con un mensaje de error
             }
             
+        }
+
+        public function login($sql,$parametros){
+            try{
+                $statment=$this->conexion->prepare($sql);//preparar consulta sql
+                if(!$statment){
+                    throw new Exception("Error en preparacion".$this->conexion->error);
+                }
+                if(!empty($parametros)){
+                    $tipos=array_shift($parametros);
+                    $statment->bind_param($tipos,...$parametros);
+                }
+                $resultado=$statment->execute();
+                if(!$resultado){
+                    throw new Exception("Error al ejecutar");
+                }
+
+                $statment->close();
+            }catch(Exception $error){
+                die($error->getMessage());
+            }
         }
     }
 ?>

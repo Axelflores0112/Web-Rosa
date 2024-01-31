@@ -9,9 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Verificar si se ha enviado el for
     $correo = $_POST["correo"];
     
 
-    $database = new Data_base(); //Conexion a base de datos
+    $database = Data_base :: getInstance(); //Conexion a base de datos aplicando pstron singletone
     try{
-        if (!empty('nombre') && !empty('clave') && !empty('correo')) {
+        if (!empty($nombre) && !empty($clave) && !empty($correo)) {
             //Insercion a la base de datos
             $sql = "INSERT INTO usuarios (nombre,clave,correo) VALUES (?,?,?)"; //Aqui solamnete estamos preparando la consulta
             //Consulta preparada con los parametros
