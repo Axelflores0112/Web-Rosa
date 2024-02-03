@@ -49,22 +49,27 @@
         public function login($sql,$parametros){
             try{
                 $statment=$this->conexion->prepare($sql);//preparar consulta sql
+
                 if(!$statment){
                     throw new Exception("Error en preparacion".$this->conexion->error);
                 }
                 if(!empty($parametros)){
                     $tipos=array_shift($parametros);
+                    //$params=array_merge([$tipos],$parametros);
                     $statment->bind_param($tipos,...$parametros);
                 }
+
                 $resultado=$statment->execute();
+                
                 if(!$resultado){
-                    throw new Exception("Error al ejecutar");
+                    throw new Exception("Error al ejecutar".$statment->error);
                 }
 
                 $statment->close();
+                return $this->conexion->error;
             }catch(Exception $error){
                 die($error->getMessage());
             }
-        }
+        }   
     }
 ?>

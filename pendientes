@@ -61,3 +61,10 @@ A TENER EN CUENTA:
   });
 </script>
 Codigo por si hay problemas de tener anidado boton y a
+
+
+$row=[
+  'correo'=>'a@hotmail.com',
+  'password'=>1234
+  'tipo'=>1
+];
